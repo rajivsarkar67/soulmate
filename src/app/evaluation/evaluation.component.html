@@ -1,0 +1,518 @@
+@for(question of questions; track question.id){
+    <button>{{question.id}}</button>
+}
+
+@for(question of questions; track question.id){
+    <div style="background-color: aquamarine; border-radius: 1rem; margin: 1rem; padding: 1rem;">
+        <p>{{question.id}}. {{question.question}}</p>
+        <p>A. {{question.optionA}}</p>
+        <p>B. {{question.optionB}}</p>
+        <p>C. {{question.optionC}}</p>
+    </div>
+}
+
+<!-- How do you feel about religion in your life?
+
+A) Very important, it guides my decisions
+B) Somewhat important, I respect traditions
+C) Not important, I’m more secular
+What’s your stance on politics?
+
+A) I’m very politically active and opinionated
+B) I’m informed but not very involved
+C) I’m not interested in politics
+How important is honesty in a relationship?
+
+A) Absolutely essential, even if it’s hard
+B) Important, but sometimes white lies are okay
+C) Honesty is important, but not always necessary
+How do you view helping others?
+
+A) It’s a key part of my life
+B) I help when I can
+C) I focus more on myself and those close to me
+What is your approach to environmental issues?
+
+A) I’m very environmentally conscious and proactive
+B) I try to be eco-friendly when possible
+C) I’m not very concerned about environmental issues
+How important is it for you to live by a moral code?
+
+A) Very important, I have a strong moral compass
+B) I have some guiding principles, but I’m flexible
+C) I don’t believe in rigid moral codes
+What’s your opinion on gender roles in a relationship?
+
+A) I believe in traditional roles
+B) I’m open to shared roles and responsibilities
+C) I reject traditional roles and prefer a flexible approach
+How do you feel about premarital cohabitation?
+
+A) It’s essential to test compatibility
+B) I’m open to it, but not necessary
+C) I prefer not to live together before marriage
+How important is it to have a connection with your community?
+
+A) Very important, I love being involved
+B) Somewhat important, I like to know my neighbors
+C) Not important, I prefer privacy and independence
+How do you view human rights issues?
+
+A) They are a central concern for me
+B) I support them, but I’m not actively involved
+C) I’m not very engaged with these issues
+Long-Term Life Goals
+How do you envision your career in the next 10 years?
+
+A) I aim for major career advancements
+B) I want stability and work-life balance
+C) I might explore different fields or focus on other aspects of life
+What are your thoughts on having children?
+
+A) I definitely want to have children
+B) I’m open to the idea, but not sure yet
+C) I don’t want children
+How important is financial security to you?
+
+A) Extremely important, I have clear financial goals
+B) Important, but I don’t stress over it
+C) I’m more focused on enjoying life than saving
+What’s your ideal living situation in the future?
+
+A) Owning a home in a peaceful suburb
+B) Living in a vibrant city with lots of opportunities
+C) Traveling frequently or living in different places
+How do you prioritize work and personal life?
+
+A) Work comes first, it’s my top priority
+B) I strive for a healthy balance between the two
+C) Personal life is more important than work
+How important is it to you to pursue higher education or continual learning?
+
+A) Very important, I love learning and growing
+B) Somewhat important, I’ll learn as needed
+C) Not very important, I prefer practical experience
+How do you feel about retirement?
+
+A) I plan to retire early and enjoy life
+B) I’ll work until a typical retirement age
+C) I might continue working as long as I can
+What are your thoughts on owning pets in the future?
+
+A) I love pets and plan to have them
+B) I’m open to it but not a priority
+C) I’m not interested in owning pets
+How important is travel and adventure in your life?
+
+A) Very important, I want to explore the world
+B) I enjoy travel occasionally
+C) Travel is not a priority for me
+What’s your approach to physical health and fitness?
+
+A) I’m very dedicated to staying fit and healthy
+B) I try to stay active but I’m not strict about it
+C) I’m not very focused on fitness
+Personality and Communication Style
+How do you usually express your feelings?
+
+A) I’m very open and direct about my emotions
+B) I express my feelings, but with some restraint
+C) I tend to keep my emotions to myself
+What’s your social preference?
+
+A) I thrive in social settings and love meeting new people
+B) I enjoy small groups and intimate gatherings
+C) I prefer solitude or being with a few close friends
+How do you handle making decisions?
+
+A) I like to take charge and make decisions quickly
+B) I weigh my options carefully before deciding
+C) I prefer to let others take the lead in decision-making
+How do you approach conflicts in a relationship?
+
+A) I confront issues head-on and seek resolution
+B) I try to understand the other person’s perspective before acting
+C) I avoid conflicts and hope they resolve on their own
+How do you usually handle stress?
+
+A) I deal with it proactively, using stress-relief techniques
+B) I manage stress by talking to someone or relaxing
+C) I try to ignore it and push through
+How do you feel about surprises?
+
+A) I love surprises and spontaneous plans
+B) I’m okay with surprises occasionally
+C) I prefer to plan everything and avoid surprises
+What’s your approach to risk-taking?
+
+A) I’m a risk-taker and enjoy new challenges
+B) I take calculated risks when necessary
+C) I prefer to play it safe and avoid risks
+How do you manage your time?
+
+A) I’m very organized and stick to a schedule
+B) I’m moderately organized, with some flexibility
+C) I’m more spontaneous and go with the flow
+What’s your preferred way to spend an evening?
+
+A) Going out to a social event or activity
+B) Relaxing at home with a movie or book
+C) Working on a personal project or hobby
+How do you handle responsibilities?
+
+A) I take them very seriously and always fulfill them
+B) I handle them well but try not to let them stress me out
+C) I prefer to delegate or share responsibilities
+Lifestyle Preferences
+What’s your ideal vacation type?
+
+A) Adventure travel, exploring new places and cultures
+B) Relaxing at a beach or resort
+C) Staying home or visiting family
+How important is a healthy diet to you?
+
+A) Very important, I’m strict about what I eat
+B) Important, but I indulge occasionally
+C) Not very important, I eat what I like
+How do you feel about home organization?
+
+A) I’m very organized and keep everything in its place
+B) I try to stay organized, but I’m not strict about it
+C) I’m not very concerned with organization
+What’s your approach to spending money?
+
+A) I’m very careful and stick to a budget
+B) I try to save, but I also enjoy spending on what I like
+C) I’m more of a spender and focus on enjoying life
+How do you feel about hosting gatherings at your home?
+
+A) I love hosting and frequently invite people over
+B) I enjoy it occasionally, but it’s not a regular thing
+C) I prefer not to host gatherings
+What’s your preference for daily routines?
+
+A) I prefer having a structured daily routine
+B) I like some routine, but with flexibility
+C) I’m more spontaneous and go with the flow
+How do you feel about nightlife?
+
+A) I enjoy going out at night, whether it’s to bars, clubs, or events
+B) I’m okay with going out occasionally, but not often
+C) I prefer quiet nights at home
+What’s your approach to fitness and exercise?
+
+A) I work out regularly and it’s a big part of my life
+B) I exercise when I can, but I’m not strict about it
+C) I’m not very focused on fitness
+How do you feel about public transportation?
+
+A) I use it regularly and prefer it to driving
+B) I use it occasionally, but I prefer to drive
+C) I avoid public transportation whenever possible
+What’s your ideal weekend?
+
+A) Packed with activities, socializing, and adventure
+B) A mix of relaxation and a few planned activities
+C) A quiet, restful time with minimal plans
+Relationship Expectations
+How important is physical affection in a relationship?
+
+A) Very important, I need regular physical contact
+B) Important, but not the most important aspect
+C) I’m not very physically affectionate
+What’s your approach to giving and receiving gifts in a relationship?
+
+A) I love giving and receiving gifts, it’s a key part of how I show love
+B) I enjoy it, but it’s not the main way I express love
+C) I’m not very focused on gift-giving
+How do you feel about maintaining individuality in a relationship?
+
+A) Very important, we should have our own lives too
+B) Important, but we should also share a lot together
+C) I prefer to do almost everything together
+What’s your stance on sharing finances in a relationship?
+
+A) I believe in completely shared finances
+B) I prefer to keep some finances separate
+C) I prefer to keep finances mostly separate
+How do you handle expressing love and affection?
+
+A) I’m very expressive and affectionate
+B) I express love through actions more than words
+C) I’m more reserved in showing love and affection
+What’s your approach to resolving disagreements in a relationship?
+
+A) I believe in discussing and resolving issues immediately
+B) I prefer to give some space before discussing
+C) I avoid confrontation and hope things smooth over
+How do you feel about social media in a relationship?
+
+A) I’m very active on social media and like to share our life
+B) I’m somewhat active but prefer to keep our relationship private
+C) I’m not interested in sharing our relationship on social media
+What’s your approach to planning for the future together?
+
+A) I believe in making detailed plans together
+B) I think it’s important but also value flexibility
+C) I prefer to take things as they come
+How do you feel about maintaining friendships outside the relationship?
+
+A) Very important, I value my friendships highly
+B) Important, but I prioritize the relationship
+C) I prefer to focus mainly on the relationship
+What’s your view on spending time apart in a relationship?
+
+A) It’s healthy and necessary to have some time apart
+B) It’s okay occasionally, but I prefer to be together most of the time
+C) I prefer to spend as much time together as possible
+Conflict Resolution and Problem Solving
+How do you handle criticism from your partner?
+
+A) I appreciate constructive criticism and use it to improve
+B) I’m okay with it, but it can be hard to hear sometimes
+C) I find it difficult and often get defensive
+What’s your approach to compromise in a relationship?
+
+A) I believe in meeting halfway and finding solutions together
+B) I’m willing to compromise but also hold my ground on key issues
+C) I find it difficult to compromise and prefer things my way
+How do you handle apologies in a relationship?
+
+A) I believe in apologizing sincerely when I’m wrong
+B) I’m willing to apologize, but it can be challenging
+C) I rarely apologize and find it difficult to admit fault
+What’s your approach to discussing sensitive topics?
+
+A) I believe in addressing sensitive topics openly and directly
+B) I’m cautious and prefer to approach them carefully
+C) I avoid discussing sensitive topics as much as possible
+How do you feel about asking for help in a relationship?
+
+A) I’m comfortable asking for help when needed
+B) I prefer to handle things on my own but will ask if necessary
+C) I rarely ask for help and prefer to be independent
+What’s your approach to dealing with mistakes in a relationship?
+
+A) I believe in acknowledging and learning from mistakes
+B) I try to move past mistakes quickly
+C) I find it difficult to admit or discuss mistakes
+How do you feel about taking responsibility for relationship issues?
+
+A) I believe in taking responsibility for my part in issues
+B) I acknowledge my role, but also focus on my partner’s actions
+C) I find it difficult to take responsibility and often blame others
+What’s your approach to setting boundaries in a relationship?
+
+A) I believe in clearly defined boundaries that are respected
+B) I’m flexible with boundaries but need some space
+C) I prefer minimal boundaries and a more fluid relationship
+How do you handle relationship challenges that involve external factors (e.g., work, family)?
+
+A) I believe in addressing them together as a team
+B) I try to manage them independently but keep my partner informed
+C) I prefer to keep external challenges separate from the relationship
+What’s your approach to dealing with relationship doubts or insecurities?
+
+A) I believe in discussing them openly with my partner
+B) I try to work through them on my own first
+C) I avoid discussing them and hope they resolve on their own
+Emotional Needs and Intimacy
+How do you prefer to receive emotional support from your partner?
+
+A) Through words of encouragement and reassurance
+B) Through actions that show care and understanding
+C) Through physical affection and closeness
+What’s your approach to expressing emotional needs in a relationship?
+
+A) I’m very open about my emotional needs
+B) I express them when necessary but try not to burden my partner
+C) I find it difficult to express my emotional needs
+How do you feel about emotional vulnerability in a relationship?
+
+A) It’s essential and strengthens the bond
+B) It’s important, but I’m careful about how much I share
+C) I find it difficult to be emotionally vulnerable
+What’s your approach to physical intimacy in a relationship?
+
+A) Very important, it’s a key part of our connection
+B) Important, but not the only way to connect
+C) I’m not very focused on physical intimacy
+How do you handle emotional ups and downs in a relationship?
+
+A) I’m open about my feelings and seek support
+B) I try to manage my emotions and not let them affect the relationship
+C) I prefer to deal with my emotions privately
+What’s your view on expressing affection in public?
+
+A) I’m comfortable with public displays of affection
+B) I’m okay with it occasionally, but prefer to keep it private
+C) I prefer to keep affection private
+How do you feel about emotional independence in a relationship?
+
+A) It’s important to have emotional independence and self-care
+B) It’s important, but I also rely on my partner for support
+C) I prefer to be emotionally interdependent with my partner
+What’s your approach to dealing with emotional conflicts in a relationship?
+
+A) I believe in talking them through calmly and finding a resolution
+B) I prefer to give it some time before discussing the conflict
+C) I avoid emotional conflicts and hope they resolve on their own
+How do you feel about emotional expressions like crying in a relationship?
+
+A) It’s natural and I’m comfortable expressing emotions like crying
+B) I find it challenging but believe it’s important to express emotions
+C) I prefer to avoid such emotional expressions
+What’s your approach to building emotional intimacy in a relationship?
+
+A) I believe in sharing deeply and building a strong emotional bond
+B) I build intimacy gradually, through shared experiences
+C) I focus more on practical aspects of the relationship than emotional intimacy
+Social and Family Dynamics
+How do you feel about spending time with extended family?
+
+A) I enjoy spending time with extended family regularly
+B) I like occasional visits, but not too often
+C) I prefer to keep interactions with extended family minimal
+What’s your approach to maintaining friendships while in a relationship?
+
+A) I believe in maintaining strong friendships outside the relationship
+B) I maintain some friendships, but focus more on the relationship
+C) I focus almost entirely on the relationship, with few outside friendships
+How do you feel about your partner’s family and their role in your relationship?
+
+A) I believe in building a close relationship with my partner’s family
+B) I think it’s important, but not essential to be close with their family
+C) I prefer to keep a distance and focus on our relationship
+What’s your view on spending holidays with family?
+
+A) I love spending holidays with family and look forward to it
+B) I enjoy it, but also like to have some holidays to ourselves
+C) I prefer to spend holidays just with my partner, without extended family
+How do you feel about socializing with friends as a couple?
+
+A) I enjoy socializing together with friends regularly
+B) I like it occasionally, but also enjoy time alone as a couple
+C) I prefer to keep socializing to a minimum and focus on our relationship
+What’s your approach to managing family expectations in a relationship?
+
+A) I believe in balancing family expectations with our own desires
+B) I try to meet family expectations, but prioritize our relationship
+C) I prefer to focus on our relationship and minimize family influence
+How do you feel about your partner having close friends of the opposite gender?
+
+A) I’m comfortable with it and trust my partner completely
+B) I’m okay with it, but have some reservations
+C) I’m uncomfortable with it and prefer it to be limited
+What’s your approach to blending different cultural or family traditions?
+
+A) I believe in embracing and blending traditions together
+B) I think it’s important to respect both, but not blend them too much
+C) I prefer to keep traditions separate and focus on our own
+How do you feel about attending social events with your partner’s friends?
+
+A) I enjoy it and like to get to know their friends better
+B) I’m okay with it, but prefer not to go too often
+C) I prefer to avoid it and let my partner handle their social circle
+What’s your view on sharing responsibilities for family obligations?
+
+A) I believe in sharing them equally and supporting each other
+B) I think it’s important, but one of us might take on more
+C) I prefer to keep family obligations minimal and focus on our relationship
+Financial Attitudes and Practices
+How do you approach budgeting and managing finances?
+
+A) I believe in detailed budgeting and careful financial management
+B) I budget generally but don’t worry too much about details
+C) I prefer a more relaxed approach and manage finances as needed
+What’s your view on saving versus spending?
+
+A) I prioritize saving for the future
+B) I believe in balancing saving and spending
+C) I prefer to focus on enjoying the present and spending as needed
+How do you handle financial surprises or unexpected expenses?
+
+A) I’m prepared with savings and a plan for emergencies
+B) I try to manage them as they come, without too much stress
+C) I prefer not to worry about them and deal with them when necessary
+What’s your approach to sharing financial responsibilities in a relationship?
+
+A) I believe in equal sharing of financial responsibilities
+B) I’m okay with unequal sharing, depending on circumstances
+C) I prefer to keep finances mostly separate and handle my own
+How do you feel about financial independence in a relationship?
+
+A) It’s important to maintain some financial independence
+B) It’s okay, but I prefer to share most financial aspects
+C) I’m comfortable with complete financial interdependence
+What’s your approach to making big financial decisions together?
+
+A) I believe in discussing and deciding together on major expenses
+B) I think it’s important, but one of us might take the lead
+C) I prefer to make most big decisions independently
+How do you feel about debt in a relationship?
+
+A) I believe in managing and paying off debt as a priority
+B) I think it’s important, but I’m okay with some manageable debt
+C) I’m not very concerned about debt and focus on other priorities
+What’s your approach to planning for long-term financial goals?
+
+A) I believe in setting clear financial goals together
+B) I think it’s important, but I’m flexible about goals
+C) I prefer to focus on short-term needs and enjoy the present
+How do you feel about spending on luxuries versus necessities?
+
+A) I prioritize necessities and limit spending on luxuries
+B) I balance spending on both, depending on circumstances
+C) I enjoy spending on luxuries and prioritize enjoying life
+What’s your approach to financial transparency in a relationship?
+
+A) I believe in complete financial transparency between partners
+B) I think it’s important, but some aspects can remain private
+C) I prefer to keep finances mostly private and separate
+Life Goals and Ambitions
+How do you approach setting and achieving life goals?
+
+A) I set clear goals and work diligently to achieve them
+B) I set goals but remain flexible and adapt as needed
+C) I prefer to live in the moment and not focus too much on goals
+What’s your view on balancing career and personal life?
+
+A) I believe in a strong balance between career and personal life
+B) I prioritize my career but also make time for personal life
+C) I focus primarily on my career and personal life comes second
+How do you handle setbacks or failures in life?
+
+A) I see them as learning experiences and bounce back quickly
+B) I take them seriously but eventually move on
+C) I find them difficult to handle and struggle to recover
+What’s your approach to lifelong learning and personal development?
+
+A) I’m committed to continuous learning and self-improvement
+B) I value learning but take it at my own pace
+C) I focus more on practical experiences than formal learning
+How do you feel about work-life balance?
+
+A) It’s essential to maintain a healthy work-life balance
+B) It’s important, but I sometimes prioritize work
+C) I focus mainly on work and personal life is secondary
+What’s your view on achieving career success?
+
+A) I’m very ambitious and career success is a top priority
+B) I value career success but also prioritize other aspects of life
+C) I’m not very focused on career success and prioritize other areas
+How do you handle change and uncertainty in life?
+
+A) I adapt quickly and see change as an opportunity
+B) I manage it, but it takes time to adjust
+C) I find change challenging and prefer stability
+What’s your approach to balancing short-term and long-term goals?
+
+A) I focus on long-term goals and plan accordingly
+B) I balance both, depending on what’s most important at the time
+C) I focus more on short-term goals and immediate needs
+How do you feel about taking risks in life?
+
+A) I’m comfortable taking calculated risks for potential rewards
+B) I’m cautious and weigh risks carefully before deciding
+C) I prefer to avoid risks and stick to safer options
+What’s your view on achieving personal fulfillment? - A) I actively pursue activities that bring me personal fulfillment - B) I value it, but don’t always prioritize it in my daily life - C) I focus more on practical concerns than personal fulfillment -->
