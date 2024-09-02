@@ -6,5 +6,5 @@ import { EvaluationComponent } from './evaluation/evaluation.component';
 export const routes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'login', component: LoginComponent},
-    {path: 'evaluation', component: EvaluationComponent},
+    {path: 'evaluation/:id', component: EvaluationComponent},
 ];

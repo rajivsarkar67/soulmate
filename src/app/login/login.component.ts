@@ -13,6 +13,6 @@ export class LoginComponent {
   constructor(private router: Router){}
 
   goToEvaluation(){
-    this.router.navigate(['evaluation']);
+    this.router.navigate(['evaluation', 1]);
   }
 }

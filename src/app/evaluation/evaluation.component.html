@@ -1,67 +1,75 @@
 @for(question of questions; track question.id){
-    <button>{{question.id}}</button>
+    <button (click)="goToQuestion(question.id)">{{question.id}}</button>
 }
 
-@for(question of questions; track question.id){
-    <div style="background-color: aquamarine; border-radius: 1rem; margin: 1rem; padding: 1rem;">
-        <p>{{question.id}}. {{question.question}}</p>
-        <p>A. {{question.optionA}}</p>
-        <p>B. {{question.optionB}}</p>
-        <p>C. {{question.optionC}}</p>
-    </div>
-}
+<div style="background-color: aquamarine; border-radius: 1rem; margin: 1rem; padding: 1rem;">
+    <p>{{questions[questionId-1].id}}. {{questions[questionId-1].question}}</p>
+    <p>A. {{questions[questionId-1].optionA}}</p>
+    <p>B. {{questions[questionId-1].optionB}}</p>
+    <p>C. {{questions[questionId-1].optionC}}</p>
+</div>
 
 <!-- How do you feel about religion in your life?
 
 A) Very important, it guides my decisions
 B) Somewhat important, I respect traditions
 C) Not important, I’m more secular
+
 What’s your stance on politics?
 
 A) I’m very politically active and opinionated
 B) I’m informed but not very involved
 C) I’m not interested in politics
+
 How important is honesty in a relationship?
 
 A) Absolutely essential, even if it’s hard
 B) Important, but sometimes white lies are okay
 C) Honesty is important, but not always necessary
+
 How do you view helping others?
 
 A) It’s a key part of my life
 B) I help when I can
 C) I focus more on myself and those close to me
+
 What is your approach to environmental issues?
 
 A) I’m very environmentally conscious and proactive
 B) I try to be eco-friendly when possible
 C) I’m not very concerned about environmental issues
+
 How important is it for you to live by a moral code?
 
 A) Very important, I have a strong moral compass
 B) I have some guiding principles, but I’m flexible
 C) I don’t believe in rigid moral codes
+
 What’s your opinion on gender roles in a relationship?
 
 A) I believe in traditional roles
 B) I’m open to shared roles and responsibilities
 C) I reject traditional roles and prefer a flexible approach
+
 How do you feel about premarital cohabitation?
 
 A) It’s essential to test compatibility
 B) I’m open to it, but not necessary
 C) I prefer not to live together before marriage
+
 How important is it to have a connection with your community?
 
 A) Very important, I love being involved
 B) Somewhat important, I like to know my neighbors
 C) Not important, I prefer privacy and independence
+
 How do you view human rights issues?
 
 A) They are a central concern for me
 B) I support them, but I’m not actively involved
 C) I’m not very engaged with these issues
 Long-Term Life Goals
+
 How do you envision your career in the next 10 years?
 
 A) I aim for major career advancements

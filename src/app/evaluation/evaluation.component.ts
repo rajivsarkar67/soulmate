@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-evaluation',
@@ -8,6 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './evaluation.component.css'
 })
 export class EvaluationComponent {
+
+  constructor(private route: ActivatedRoute, private router: Router){}
+
+  questionId : any;
+  idSubscription: any;
 
   questions = [
     {id:1, question: 'How do you prefer to spend your weekends?', optionA: 'Exploring new places or outdoor activities', optionB: 'Relaxing at home with a book or movie', optionC: 'Socializing with friends and family'},
@@ -21,5 +27,25 @@ export class EvaluationComponent {
     {id:9, question: 'What is your preferred way to show affection?', optionA: 'Physical touch, like hugs or holding hands', optionB: 'Verbal expressions, like saying "I love you"', optionC: 'Acts of service, like doing something thoughtful for them'},
     {id:10, question: 'How do you view long-term relationships?', optionA: 'They require continuous effort and communication', optionB: 'They should feel natural and not require much effort', optionC: 'They are about shared experiences and growth together'},
   ]
+
+  ngOnInit(){
+    this.idSubscription = this.route.paramMap.subscribe(params => {
+      this.questionId = params.get('id');
+    })
+
+    // if(this.route.snapshot.paramMap.get('id')){
+    //   this.questionId = this.route.snapshot.paramMap.get('id');
+    //   console.log(this.questionId);
+    // }
+  }
+
+  goToQuestion(id: number){
+    this.router.navigate(['evaluation', id]);
+    this.ngOnInit();
+  }
+
+  ngOnDestroy(){
+    this.idSubscription.unsubscribe();
+  }
 
 }
