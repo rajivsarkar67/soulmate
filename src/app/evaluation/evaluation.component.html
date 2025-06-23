@@ -9,5 +9,5 @@
     <p>C. {{questions[questionId-1].optionC}}</p>
 </div>
 
-<button (click)="goToQuestion(+questionId-1)"><</button>
-<button (click)="goToQuestion(+questionId+1)">></button>
+<button (click)="goToQuestion(+questionId-1)" [disabled]="questionId === '1'"><</button>
+<button (click)="goToQuestion(+questionId+1)" [disabled]="questionId === questions.length.toString()">></button>
