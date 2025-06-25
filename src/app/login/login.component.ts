@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -10,9 +11,40 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  constructor(private router: Router){}
+  currentUser: any;
+  isOtpSent: boolean = false;
 
-  goToEvaluation(){
-    this.router.navigate(['evaluation', 1]);
+  // there will be a payment page, only after successful payment, the user can login
+  // need to make that system
+
+  constructor(private router: Router, private dataService: DataService){}
+
+  sendOTP(phone: number){
+    console.log('sendOTP called');
+    if(phone<6000000000 || phone>9999999999){
+      alert('Phone number should be valid');
+    }else{  
+      this.isOtpSent = true;
+    }
   }
+
+  goToEvaluation(phone: number, otp: number){
+    this.dataService.doesUserExist(phone).subscribe((res: any) => {
+      this.currentUser = res.find((elem: any) => +elem.phone === phone);
+      if(this.currentUser){   // if user exists in the db
+        console.log('user exists in the db');
+        this.router.navigate(['evaluation', 1]);
+      }
+      else{   // if user doesn't exists in the db
+        alert("user doesn't exists in the db");
+      }
+
+    });
+  }
+
+  // get Api call to check whether the phone number exists in the database
+  // for now, if it exists, only then transfer the user to the evaluation page.
+  // take reference of the currentQuestion for that particular user
+  // later, we will transfer new user to the evaluation page, but after creating his entry in the db
+
 }
