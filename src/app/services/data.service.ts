@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
 
+  currentUser: any;
+
   constructor(private http: HttpClient) { }
 
   doesUserExist(phone: number){

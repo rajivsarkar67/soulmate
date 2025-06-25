@@ -11,7 +11,6 @@ import { DataService } from '../services/data.service';
 })
 export class LoginComponent {
 
-  currentUser: any;
   isOtpSent: boolean = false;
 
   // there will be a payment page, only after successful payment, the user can login
@@ -30,8 +29,8 @@ export class LoginComponent {
 
   goToEvaluation(phone: number, otp: number){
     this.dataService.doesUserExist(phone).subscribe((res: any) => {
-      this.currentUser = res.find((elem: any) => +elem.phone === phone);
-      if(this.currentUser){   // if user exists in the db
+      this.dataService.currentUser = res.find((elem: any) => +elem.phone === phone);
+      if(this.dataService.currentUser){   // if user exists in the db
         console.log('user exists in the db');
         this.router.navigate(['evaluation', 1]);
       }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-evaluation',
@@ -10,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EvaluationComponent {
 
-  constructor(private route: ActivatedRoute, private router: Router){}
+  constructor(private route: ActivatedRoute, private router: Router, public dataService: DataService){}
 
   questionId : any;
   idSubscription: any;
@@ -442,6 +443,7 @@ export class EvaluationComponent {
   }
 
   goToQuestion(id: number){
+    console.log('goToQuestion called');
     this.router.navigate(['evaluation', id]);
     this.ngOnInit();
   }
