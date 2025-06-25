@@ -19,7 +19,6 @@ export class LoginComponent {
   constructor(private router: Router, private dataService: DataService){}
 
   sendOTP(phone: number){
-    console.log('sendOTP called');
     if(phone<6000000000 || phone>9999999999){
       alert('Phone number should be valid');
     }else{  
@@ -31,7 +30,6 @@ export class LoginComponent {
     this.dataService.doesUserExist(phone).subscribe((res: any) => {
       this.dataService.currentUser = res.find((elem: any) => +elem.phone === phone);
       if(this.dataService.currentUser){   // if user exists in the db
-        console.log('user exists in the db');
         this.router.navigate(['evaluation', 1]);
       }
       else{   // if user doesn't exists in the db

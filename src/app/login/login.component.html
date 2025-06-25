@@ -1,5 +1,8 @@
-<input [disabled]="isOtpSent" #phone type="number" placeholder="Phone Number">
-<button [disabled]="isOtpSent" (click)="sendOTP(+phone.value)">Send OTP</button>
-<br>
-<input [disabled]="!isOtpSent" #otp type="number" placeholder="OTP">
-<button [disabled]="!isOtpSent" (click)="goToEvaluation(+phone.value, +otp.value)">Login</button>
+<div class="login-container">
+    <input [disabled]="isOtpSent" #phone type="number" placeholder="Phone Number" id="phone-input" class="input-field">
+    <button [disabled]="isOtpSent" (click)="sendOTP(+phone.value)" id="send-otp-btn" class="btn">Send OTP</button>
+    <br>
+    <input [disabled]="!isOtpSent" #otp type="number" placeholder="OTP" id="otp-input" class="input-field">
+    <button [disabled]="!isOtpSent" (click)="goToEvaluation(+phone.value, +otp.value)" id="login-btn" class="btn">Login</button>
+</div>
+  
