@@ -1,16 +1,17 @@
-@for(question of questions; track question.id){
+@for(question of questions(); track question.id){
     <button [disabled]="!dataService.currentUser[question.id] && question.id !== dataService.currentUser.currentQuestion" (click)="goToQuestion(question.id)">{{question.id}}</button>
 }
 
-<div style="background-color: aquamarine; border-radius: 1rem; margin: 1rem; padding: 1rem;">
-    <p>{{questions[questionId-1].id}}. {{questions[questionId-1].question}}</p>
-    <input type="radio" id="A" name="question${{questions[questionId-1].id}}" value="A" [(ngModel)]="selectedOption">
-    <label for="A">{{questions[questionId-1].optionA}}</label><br>
-    <input type="radio" id="B" name="question${{questions[questionId-1].id}}" value="B" [(ngModel)]="selectedOption">
-    <label for="B">{{questions[questionId-1].optionB}}</label><br>
-    <input type="radio" id="C" name="question${{questions[questionId-1].id}}" value="C" [(ngModel)]="selectedOption">
-    <label for="C">{{questions[questionId-1].optionC}}</label>
-</div>
-
-<button (click)="goToQuestion(+questionId-1)" [disabled]="questionId === 1"><</button>
-<button (click)="goToNextQuestion()" [disabled]="questionId === questions.length">></button>
+@if(questions()?.length){
+    <div style="background-color: aquamarine; border-radius: 1rem; margin: 1rem; padding: 1rem;">
+        <p>{{questions()![questionId-1]!.id}}. {{questions()![questionId-1]!.question}}</p>
+        <input type="radio" id="A" name="question${{questions()![questionId-1]!.id}}" value="A" [(ngModel)]="selectedOption">
+        <label for="A">{{questions()![questionId-1]!.optionA}}</label><br>
+        <input type="radio" id="B" name="question${{questions()![questionId-1]!.id}}" value="B" [(ngModel)]="selectedOption">
+        <label for="B">{{questions()![questionId-1]!.optionB}}</label><br>
+        <input type="radio" id="C" name="question${{questions()![questionId-1]!.id}}" value="C" [(ngModel)]="selectedOption">
+        <label for="C">{{questions()![questionId-1]!.optionC}}</label>
+    </div>
+    <button (click)="goToQuestion(+questionId-1)" [disabled]="questionId === 1"><</button>
+    <button (click)="goToNextQuestion()" [disabled]="questionId === questions()!.length">></button>
+}

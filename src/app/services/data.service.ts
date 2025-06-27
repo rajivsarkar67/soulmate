@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,10 +8,20 @@ import { Injectable } from '@angular/core';
 export class DataService {
 
   currentUser: any;
+  // questions: any;
+  public questionsSignal = signal(null);
 
   constructor(private http: HttpClient) { }
 
   doesUserExist(phone: number){
     return this.http.get('http://localhost:3000/users');
+  }
+
+  getAllQuestions(){
+    this.http.get('http://localhost:3000/questions').subscribe((res: any) => {
+      console.log(res);
+      this.questionsSignal.set(res);
+      console.log(this.questionsSignal());
+    });
   }
 }

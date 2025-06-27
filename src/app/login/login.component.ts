@@ -27,7 +27,9 @@ export class LoginComponent {
   }
 
   goToEvaluation(phone: number, otp: number){
+    console.log('goToEvaluation called');
     this.dataService.doesUserExist(phone).subscribe((res: any) => {
+      console.log(res);
       this.dataService.currentUser = res.find((elem: any) => +elem.phone === phone);
       if(this.dataService.currentUser){   // if user exists in the db, then login
         localStorage.setItem('currentUser', JSON.stringify(this.dataService.currentUser));
