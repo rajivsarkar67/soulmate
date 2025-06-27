@@ -19,9 +19,7 @@ export class DataService {
 
   getAllQuestions(){
     this.http.get('http://localhost:3000/questions').subscribe((res: any) => {
-      console.log(res);
       this.questionsSignal.set(res);
-      console.log(this.questionsSignal());
     });
   }
 }

@@ -23,12 +23,12 @@ export class EvaluationComponent {
     this.idSubscription = this.route.paramMap.subscribe(params => {
       this.questionId = Number(params.get('id'));
       this.dataService.getAllQuestions();
-      console.log(this.dataService.questionsSignal());
+      //creating a computed signal for storing questions
       this.questions = computed(() => {
-        // console.log('trying to update questions');
         return this.dataService.questionsSignal();
       })
-      // this.selectedOption = this.dataService.questions[this.questionId] === 'A' || this.dataService.questions[this.questionId] === 'B' || this.dataService.questions[this.questionId] === 'C' ? this.dataService.questions[this.questionId] : null;
+      this.selectedOption = this.questions[this.questionId] === 'A' || this.questions[this.questionId] === 'B' || this.questions[this.questionId] === 'C' ? this.questions[this.questionId] : null;
+      console.log(this.selectedOption);
     })
   }
 
