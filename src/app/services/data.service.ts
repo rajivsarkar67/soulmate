@@ -8,7 +8,6 @@ import { BehaviorSubject } from 'rxjs';
 export class DataService {
 
   currentUser: any;
-  // questions: any;
   public questionsSignal = signal(null);
 
   constructor(private http: HttpClient) { }

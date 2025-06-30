@@ -22,13 +22,12 @@ export class EvaluationComponent {
   ngOnInit(){
     this.idSubscription = this.route.paramMap.subscribe(params => {
       this.questionId = Number(params.get('id'));
+      // if(this.dataService.currentUser[])
       this.dataService.getAllQuestions();
       //creating a computed signal for storing questions
       this.questions = computed(() => {
         return this.dataService.questionsSignal();
       })
-      this.selectedOption = this.questions[this.questionId] === 'A' || this.questions[this.questionId] === 'B' || this.questions[this.questionId] === 'C' ? this.questions[this.questionId] : null;
-      console.log(this.selectedOption);
     })
   }
 
@@ -44,12 +43,13 @@ export class EvaluationComponent {
     }
     // save the answer of the current question
     this.dataService.currentUser[this.questionId] = this.selectedOption;
+    this.dataService.currentUser.currentQuestion = this.questionId + 1;
     // first we will check if the next question is disabled or not
     // if it is disabled, call an api to enable it
     // then, irrespective of disabled or enabled, navigate to the question
     this.dataService.currentUser[this.questionId+1] = true;
+    localStorage.setItem('currentUser', JSON.stringify(this.dataService.currentUser));
     this.router.navigate(['evaluation', this.questionId+1]);
-    console.log(this.dataService.currentUser);
   }
 
   ngOnDestroy(){

@@ -1,5 +1,5 @@
 @for(question of questions(); track question.id){
-    <button [disabled]="!dataService.currentUser[question.id] && question.id !== dataService.currentUser.currentQuestion" (click)="goToQuestion(question.id)">{{question.id}}</button>
+    <button [disabled]="question.id !== dataService.currentUser.currentQuestion.toString()" (click)="goToQuestion(question.id)">{{question.id}}</button>
 }
 
 @if(questions()?.length){
@@ -12,6 +12,6 @@
         <input type="radio" id="C" name="question${{questions()![questionId-1]!.id}}" value="C" [(ngModel)]="selectedOption">
         <label for="C">{{questions()![questionId-1]!.optionC}}</label>
     </div>
-    <button (click)="goToQuestion(+questionId-1)" [disabled]="questionId === 1"><</button>
+    <!-- <button (click)="goToQuestion(+questionId-1)" [disabled]="questionId === 1"><</button> -->
     <button (click)="goToNextQuestion()" [disabled]="questionId === questions()!.length">></button>
 }
