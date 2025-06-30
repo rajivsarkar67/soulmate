@@ -31,11 +31,6 @@ export class EvaluationComponent {
     })
   }
 
-  goToQuestion(id: number){
-    this.router.navigate(['evaluation', id]);
-    this.ngOnInit();
-  }
-
   goToNextQuestion(){
     if(!this.selectedOption){
       alert('Please select an option to move ahead');

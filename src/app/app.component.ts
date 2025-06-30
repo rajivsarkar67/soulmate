@@ -11,7 +11,7 @@ import { DataService } from './services/data.service';
 })
 export class AppComponent {
   title = 'yourSoulmate';
-  isLoading: boolean = false;
+  isLoading: boolean = true;
 
   constructor(private dataService: DataService){}
   ngOnInit(){

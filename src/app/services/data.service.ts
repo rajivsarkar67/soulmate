@@ -9,7 +9,7 @@ export class DataService {
 
   currentUser: any;
   questionsSignal = signal(null);
-  isLoading = new BehaviorSubject<boolean>(false);
+  isLoading = new BehaviorSubject<boolean>(true);
 
   constructor(private http: HttpClient) { }
 
