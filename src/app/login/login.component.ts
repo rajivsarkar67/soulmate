@@ -33,7 +33,7 @@ export class LoginComponent {
       this.dataService.currentUser = res.find((elem: any) => +elem.phone === phone);
       if(this.dataService.currentUser){   // if user exists in the db, then login
         localStorage.setItem('currentUser', JSON.stringify(this.dataService.currentUser));
-        this.router.navigate(['evaluation', 1]);
+        this.router.navigate(['evaluation', this.dataService.currentUser.currentQuestion]);
       }
       else{   // if user doesn't exists in the db
         alert("user doesn't exists in the db");
