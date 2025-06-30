@@ -11,13 +11,9 @@ import { DataService } from './services/data.service';
 })
 export class AppComponent {
   title = 'yourSoulmate';
-  isLoading: boolean = true;
 
-  constructor(private dataService: DataService){}
+  constructor(public dataService: DataService){}
   ngOnInit(){
-    this.dataService.isLoading.subscribe(res => {
-      this.isLoading = res;
-    })
     if(localStorage.getItem('currentUser')){
       this.dataService.currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
     }

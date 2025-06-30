@@ -9,7 +9,7 @@ export class DataService {
 
   currentUser: any;
   questionsSignal = signal(null);
-  isLoading = new BehaviorSubject<boolean>(true);
+  isLoading = signal(false);
 
   constructor(private http: HttpClient) { }
 
@@ -23,11 +23,4 @@ export class DataService {
     });
   }
 
-  showLoader(){
-    this.isLoading.next(true);
-  }
-
-  hideLoader(){
-    this.isLoading.next(false);
-  }
 }
