@@ -32,19 +32,16 @@ export class EvaluationComponent {
   }
 
   goToNextQuestion(){
+
     if(!this.selectedOption){
       alert('Please select an option to move ahead');
       return;
     }
-    // save the answer of the current question
-    this.dataService.currentUser[this.questionId] = this.selectedOption;
-    this.dataService.currentUser.currentQuestion = this.questionId + 1;
-    // first we will check if the next question is disabled or not
-    // if it is disabled, call an api to enable it
-    // then, irrespective of disabled or enabled, navigate to the question
-    this.dataService.currentUser[this.questionId+1] = true;
-    localStorage.setItem('currentUser', JSON.stringify(this.dataService.currentUser));
-    this.router.navigate(['evaluation', this.questionId+1]);
+
+    // saving the answer to the backend
+    this.dataService.saveAnswer(this.dataService.currentUser.phone, this.questionId, this.selectedOption).subscribe(res => {
+      this.router.navigate(['evaluation', this.questionId+1]);
+    });
   }
 
   ngOnDestroy(){
