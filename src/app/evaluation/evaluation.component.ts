@@ -40,6 +40,8 @@ export class EvaluationComponent {
 
     // saving the answer to the backend
     this.dataService.saveAnswer(this.dataService.currentUser.phone, this.questionId, this.selectedOption).subscribe(res => {
+      this.dataService.currentUser = res;
+      localStorage.setItem('currentUser', JSON.stringify(this.dataService.currentUser));
       this.router.navigate(['evaluation', this.questionId+1]);
     });
   }
